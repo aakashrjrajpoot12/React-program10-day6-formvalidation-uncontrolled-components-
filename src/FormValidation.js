@@ -1,7 +1,7 @@
 import React from 'react';
 import {withFormik,Form,Field} from 'formik';
 import * as Yup from 'yup' ;
-const Employee =({errors,touched,isSubmitting})
+const EmployeeForm =({errors,touched,isSubmitting})//this EmployeeForm is arrow function whic is taking   3 parameters
 =>(
   <div>
     <h1>Employee Form</h1>
@@ -15,7 +15,7 @@ const Employee =({errors,touched,isSubmitting})
         </div>
         <div>
           <label>
-            <Filed type="checkbox" name="manager"/>
+            <Field type="checkbox" name="manager"/>
             Manger
             </label>
             </div>
