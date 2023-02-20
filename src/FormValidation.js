@@ -6,20 +6,21 @@ const EmployeeForm =({errors,touched,isSubmitting})//this EmployeeForm is arrow 
 =>(
   <div>
     <h1>Employee Form</h1>
-    <Form>{/* */ }{/* This is not HTML form it is provided by withFormik*/ }
+    <Form>{/* */ }{/* This is not HTML form it is provided by withFormik library*/ }
       <div>
-        <Field type="text" name="empname"
-        placeholder="Empname"/>
-        {touched.empname && errors.empname &&(
-          <span style={{color:'red'}}>{errors.empname}</span>
+        <Field type="text" name="empname" placeholder="Empname"/> {/* field from formik libraary*/}
+        {touched.empname && errors.empname &&(//if in this field empname if i touch and also if i had entered wrong empname ,it is mandatory field
+          <span style={{color:'red'}}>{errors.empname}</span> //errors.empname where,empname is  name of this field
         )}
         </div>
+
         <div>
           <label>
             <Field type="checkbox" name="manager"/>
-            Manger
+            Manager
             </label>
             </div>
+
             <br/>
             <button type ="submit" disabled={isSubmitting}>Submit</button>
             </Form>
@@ -32,7 +33,8 @@ const FormikEmployeeform=withFormik({mapPropsRoValues({empname,manager}){
   };
 },
 validationSchemea:Yup.object().shape({
-empname:Yup.string().min(3,'Name must be at least 3 characters in length')
+empname:Yup.string()
+.min(3,'Name must be at least 3 characters in length')
 .required('Name is required'),
 }),
 
