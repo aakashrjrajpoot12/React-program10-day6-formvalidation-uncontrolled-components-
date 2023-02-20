@@ -1,11 +1,12 @@
 import React from 'react';
-import {withFormik,Form,Field} from 'formik';
-import * as Yup from 'yup' ;
+import {withFormik,Form,Field} from 'formik';//Formik is third party React form library. It provides basic form programming and validation. It is based on controlled component and greatly reduces the time to do form programming.
+import * as Yup from 'yup' ;//Yup is a JavaScript schema builder for value parsing and validation.
+
 const EmployeeForm =({errors,touched,isSubmitting})//this EmployeeForm is arrow function whic is taking   3 parameters
 =>(
   <div>
     <h1>Employee Form</h1>
-    <Form>
+    <Form>{/* */ }{/* This is not HTML form it is provided by withFormik*/ }
       <div>
         <Field type="text" name="empname"
         placeholder="Empname"/>
