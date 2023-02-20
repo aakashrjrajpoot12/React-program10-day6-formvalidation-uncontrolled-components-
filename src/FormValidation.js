@@ -34,8 +34,22 @@ validationSchemea:Yup.object().shape({
 empname:Yup.string().min(3,'Name must be at least 3 characters in length')
 .required('Name is required'),
 }),
-handleSubmit(values{props,})
-)
+
+handleSubmit(values,{props,resetForm,setSubmitting,setErrors}){
+  //console.log(values);
+  props.onSubmit(values);//pass the submitted values to the parent component,"App"
+  setTimeout(()=>{
+    if(values.empname=='god'){
+      setErrors({empname:'You cannot add God as an employee'});
+    }else{
+      resetForm();
+      alerrt(JSON.stringify(values));
+
+    }
+    setSubmitting(false);
+    },2000);
+  },
+})(EmployeeForm);//EmployeeForm has been passed as argument to line 27 const FormikEmployeeform
+export default FormikEmployeeform;
 
 
-)
