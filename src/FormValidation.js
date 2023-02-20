@@ -26,6 +26,7 @@ const EmployeeForm =({errors,touched,isSubmitting})//this EmployeeForm is arrow 
             </Form>
             </div>
 );
+//this below code is for validation and we had passed argument as Employee at below see line number 56
 const FormikEmployeeform=withFormik({mapPropsRoValues({empname,manager}){
   return{
     empname:empname||'',
@@ -52,7 +53,7 @@ handleSubmit(values,{props,resetForm,setSubmitting,setErrors}){
     setSubmitting(false);
     },2000);
   },
-})(EmployeeForm);//EmployeeForm has been passed as argument to line 27 const FormikEmployeeform
+})(EmployeeForm);//EmployeeForm has been passed as argument to line 30 const FormikEmployeeform
 export default FormikEmployeeform;
 
 
