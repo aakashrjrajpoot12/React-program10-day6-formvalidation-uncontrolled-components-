@@ -1,11 +1,16 @@
 import React from "react";
 import "./style.css";
+import MyForm from './FormValidation ';
 
-export default function App() {
+export default class App extends React.Component {
+ handleFormSubmit(values){
+   console.log('handlesubmit from App component');
+   console.log(values);
+ }
+ 
+ render(){
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+    <MyForm onSubmit={(values)=> this.handleFormSubmit(values)} />
   );
+}
 }
