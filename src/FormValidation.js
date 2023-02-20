@@ -27,13 +27,13 @@ const EmployeeForm =({errors,touched,isSubmitting})//this EmployeeForm is arrow 
             </div>
 );
 //this below code is for validation and we had passed argument as Employee at below see line number 56
-const FormikEmployeeform=withFormik({mapPropsRoValues({empname,manager}){
+const FormikEmployeeform=withFormik({mapPropsToValues({empname,manager}) {
   return{
     empname:empname||'',
-    manager:mananger||flase,
+    manager:manager||false,
   };
 },
-validationSchemea:Yup.object().shape({
+validationSchema: Yup.object().shape({
 empname:Yup.string()
 .min(3,'Name must be at least 3 characters in length')
 .required('Name is required'),
