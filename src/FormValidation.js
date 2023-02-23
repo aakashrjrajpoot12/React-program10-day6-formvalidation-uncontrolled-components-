@@ -45,15 +45,14 @@ handleSubmit(values,{props,resetForm,setSubmitting,setErrors}){//handle submit i
   //console.log(values);
   props.onSubmit(values);//pass the submitted values to the parent component,"App"
   setTimeout(()=>{
-    if(values.empname=='god'){
+    if(values.empname=='God'){
       setErrors({empname:'You cannot add God as an employee'});
     }else{
-      resetForm();
+      resetForm();//If i had given some value and after submitting it want to give another value then i need to earase it that's why resetForm is called 
       alerrt(JSON.stringify(values));
 
     }
-    setSubmitting(false);
-    },2000);
+    setSubmitting(false);},2000); //setSubmitting(false),which means form is not Submitted when you type God as empname,setTimeout method is closing here it would wait for 2 sec if value is god it will show You cannot add God as an employee'
   },
 })(EmployeeForm);//EmployeeForm has been passed as argument to line 30 const FormikEmployeeform
 export default FormikEmployeeform;

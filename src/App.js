@@ -11,8 +11,9 @@ export default class App extends React.Component {
  
  render(){
   return (
+    //To excess onSubmit we are using props.onsubmit line 46 inside FormValidation
     <MyForm onSubmit={(values)=> this.handleFormSubmit(values)} />
-    //when we click on onSubmit it will call .handleFormSubmit(values) which is mentioned above line7
+    // onSubmit  will call .handleFormSubmit(values) which is mentioned above line7 ,which means above function is going as value to onSubmit
   );
 }
 }
