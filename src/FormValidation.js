@@ -36,12 +36,12 @@ const FormikEmployeeform=withFormik({mapPropsToValues({empname,manager}) {
   };
 },
 validationSchema: Yup.object().shape({
-empname:Yup.string()
-.min(3,'Name must be at least 3 characters in length')
-.required('Name is required'),
+empname:Yup.string() //In this Schema Yup is mandotory required to validate not manager
+.min(3,'Name must be at least 3 characters in length')//if empname is of 1 word than error would be genenrated 
+.required('Name is required'),//As empname is mandotory
 }),
-
-handleSubmit(values,{props,resetForm,setSubmitting,setErrors}){
+//when we click on submit this handle submit would be called
+handleSubmit(values,{props,resetForm,setSubmitting,setErrors}){//handle submit is function having 2 parameters, 1 is values and other is sequence of values
   //console.log(values);
   props.onSubmit(values);//pass the submitted values to the parent component,"App"
   setTimeout(()=>{
