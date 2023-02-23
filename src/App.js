@@ -12,7 +12,7 @@ export default class App extends React.Component {
  render(){
   return (
     <MyForm onSubmit={(values)=> this.handleFormSubmit(values)} />
-    //when we click on onSubmit it will call .handleFormSubmit(values)
+    //when we click on onSubmit it will call .handleFormSubmit(values) which is mentioned above line7
   );
 }
 }
